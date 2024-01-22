@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.1 on win32)" generated="20240122 16:14:11.977" rpa="false" schemaversion="4">
+<suite id="s1" name="JioMart" source="C:\Users\great\Desktop\Learn\RobotFrameWork Learning\JioMart">
+<suite id="s1-s1" name="JioMart" source="C:\Users\great\Desktop\Learn\RobotFrameWork Learning\JioMart\JioMart.robot">
+<test id="s1-s1-t1" name="Open URL" line="17">
+<kw name="Open Link">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${url}</arg>
+<arg>browser=Edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240122 16:14:12.324" level="INFO">Opening browser 'Edge' to base url 'https://www.jiomart.com/'.</msg>
+<status status="PASS" starttime="20240122 16:14:12.323" endtime="20240122 16:14:21.285"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240122 16:14:21.286" endtime="20240122 16:14:21.477"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:12.322" endtime="20240122 16:14:21.478"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:12.321" endtime="20240122 16:14:21.480"/>
+</test>
+<test id="s1-s1-t2" name="Search" line="20">
+<kw name="Search and clik on product">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${searchfieldXPATh}</arg>
+<arg>text=${keyword_to_search}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240122 16:14:21.493" level="INFO">Typing text 's23 ultra' into text field '//*[@id="autocomplete-0-input"]'.</msg>
+<status status="PASS" starttime="20240122 16:14:21.491" endtime="20240122 16:14:21.895"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${searchfieldXPATh}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240122 16:14:21.898" level="INFO">Sending key(s) ('RETURN',) to //*[@id="autocomplete-0-input"] element.</msg>
+<msg timestamp="20240122 16:14:22.304" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20240122 16:14:22.305" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20240122 16:14:21.896" endtime="20240122 16:14:23.639"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${searchresultToClickXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240122 16:14:23.642" level="INFO">Clicking element '//*[@id="598095291"]/div[2]/div[2]/div/div[1]'.</msg>
+<status status="PASS" starttime="20240122 16:14:23.640" endtime="20240122 16:14:30.998"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:21.489" endtime="20240122 16:14:30.999"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:21.487" endtime="20240122 16:14:31.000"/>
+</test>
+<test id="s1-s1-t3" name="add to cart" line="23">
+<kw name="add to cart">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240122 16:14:31.004" level="INFO">Executing JavaScript:
+window.scrollBy(0,200)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240122 16:14:31.003" endtime="20240122 16:14:31.010"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240122 16:14:36.011" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240122 16:14:31.010" endtime="20240122 16:14:36.011"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.jm-btn.secondary.medium.center.full-width.jm-fw-bold.addtocartbtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240122 16:14:36.012" level="INFO">Clicking element 'css:.jm-btn.secondary.medium.center.full-width.jm-fw-bold.addtocartbtn'.</msg>
+<status status="PASS" starttime="20240122 16:14:36.011" endtime="20240122 16:14:37.104"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>time_=5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240122 16:14:42.107" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240122 16:14:37.105" endtime="20240122 16:14:42.107"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(200,0)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240122 16:14:42.109" level="INFO">Executing JavaScript:
+window.scrollBy(200,0)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240122 16:14:42.107" endtime="20240122 16:14:42.116"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${cartButtonXPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240122 16:14:42.117" level="INFO">Clicking element '//*[@id="btn_minicart"]'.</msg>
+<status status="PASS" starttime="20240122 16:14:42.116" endtime="20240122 16:14:44.743"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:31.002" endtime="20240122 16:14:44.744"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:31.001" endtime="20240122 16:14:44.745"/>
+</test>
+<test id="s1-s1-t4" name="place order" line="26">
+<kw name="place order">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${placeOrderXPATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240122 16:14:44.752" level="INFO">Clicking button '//*[@id="login-container"]/jds-container[4]/section/div/jds-button/button'.</msg>
+<status status="PASS" starttime="20240122 16:14:44.750" endtime="20240122 16:14:45.640"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>history.back()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240122 16:14:45.642" level="INFO">Executing JavaScript:
+history.back()
+Without any arguments.</msg>
+<status status="PASS" starttime="20240122 16:14:45.640" endtime="20240122 16:14:46.166"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:44.749" endtime="20240122 16:14:46.167"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:44.748" endtime="20240122 16:14:46.168"/>
+</test>
+<test id="s1-s1-t5" name="remove" line="29">
+<kw name="Remove from cart">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${removeOneItemXpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240122 16:14:46.175" level="INFO">Clicking button '//*[@id="itemid-598095291"]/div[3]/div/jds-button[1]/button'.</msg>
+<status status="PASS" starttime="20240122 16:14:46.173" endtime="20240122 16:14:47.191"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:46.172" endtime="20240122 16:14:47.192"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:46.171" endtime="20240122 16:14:47.192"/>
+</test>
+<test id="s1-s1-t6" name="close" line="32">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240122 16:14:47.197" endtime="20240122 16:14:49.591"/>
+</kw>
+<status status="PASS" starttime="20240122 16:14:47.195" endtime="20240122 16:14:49.592"/>
+</test>
+<status status="PASS" starttime="20240122 16:14:12.021" endtime="20240122 16:14:49.594"/>
+</suite>
+<status status="PASS" starttime="20240122 16:14:11.984" endtime="20240122 16:14:49.598"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="JioMart">JioMart</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="JioMart">JioMart.JioMart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
